@@ -1,1 +1,4 @@
 <p>{{ count }}</p>
+<p *ngFor="let name of names; index as i" addSpy (click)="removeName(i)">
+  {{ i + 1 }},{{ name }}
+</p>

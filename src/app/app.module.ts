@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from './counter/counter.component';
 import { DisplayCountComponent } from './display-count/display-count.component';
+import { AddSpyDirective } from './add-spy.directive';
 
 registerLocaleData(en);
 
@@ -19,7 +20,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     CounterComponent,
-    DisplayCountComponent
+    DisplayCountComponent,
+    AddSpyDirective
   ],
   imports: [
     BrowserModule,
