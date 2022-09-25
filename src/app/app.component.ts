@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-firebase-ngrx';
+  count = 0;
+
+  onIncrement(payload: number) {
+    this.count += payload;
+  }
 }
