@@ -2,3 +2,15 @@
 <p *ngFor="let name of names; index as i" addSpy (click)="removeName(i)">
   {{ i + 1 }},{{ name }}
 </p>
+<p>{{ person.name }}</p>
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [formControl]="field" />
+  <input type="text" [value]="test" (change)="onChange($event)" />
+  <input
+    type="text"
+    name="field1"
+    [(ngModel)]="test1"
+    (ngModelChange)="onNgModelChange($event)"
+  />
+  <button type="submit">Submit</button>
+</form>

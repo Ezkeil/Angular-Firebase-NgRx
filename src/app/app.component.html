@@ -15,5 +15,9 @@
     src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg"
   />
 </a> -->
-<app-display-count [count]="count"></app-display-count>
+<app-display-count
+  [count]="count"
+  [person]="person"
+  (updatePerson)="onUpdatePerson($event)"
+></app-display-count>
 <app-counter [count]="count" (increment)="onIncrement($event)"></app-counter>

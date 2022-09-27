@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from './counter/counter.component';
 import { DisplayCountComponent } from './display-count/display-count.component';
 import { AddSpyDirective } from './add-spy.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(en);
 
@@ -21,18 +22,17 @@ registerLocaleData(en);
     AppComponent,
     CounterComponent,
     DisplayCountComponent,
-    AddSpyDirective
+    AddSpyDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US }
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
