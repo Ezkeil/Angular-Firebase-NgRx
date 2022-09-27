@@ -4,13 +4,19 @@
 </p>
 <p>{{ person.name }}</p>
 <form (ngSubmit)="onSubmit()">
+  <label>Form Control:</label>
   <input type="text" [formControl]="field" />
+  <br />
+  <label>Change Event:</label>
   <input type="text" [value]="test" (change)="onChange($event)" />
+  <br />
+  <label>Ng Model:</label>
   <input
     type="text"
     name="field1"
     [(ngModel)]="test1"
     (ngModelChange)="onNgModelChange($event)"
   />
+  <br />
   <button type="submit">Submit</button>
 </form>
