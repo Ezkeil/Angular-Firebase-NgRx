@@ -19,5 +19,7 @@
   [count]="count"
   [person]="person"
   (updatePerson)="onUpdatePerson($event)"
-></app-display-count>
+>
+  <app-projection></app-projection>
+</app-display-count>
 <app-counter [count]="count" (increment)="onIncrement($event)"></app-counter>

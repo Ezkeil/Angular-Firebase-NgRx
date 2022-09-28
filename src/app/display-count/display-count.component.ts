@@ -1,5 +1,8 @@
 import {
+  AfterContentChecked,
+  AfterContentInit,
   Component,
+  ContentChild,
   EventEmitter,
   Input,
   OnChanges,
@@ -8,6 +11,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ProjectionComponent } from '../projection/projection.component';
 
 type Person = {
   name: string;
@@ -19,10 +23,13 @@ type Person = {
   templateUrl: './display-count.component.html',
   styleUrls: ['./display-count.component.less'],
 })
-export class DisplayCountComponent implements OnInit, OnChanges {
+export class DisplayCountComponent
+  implements OnInit, OnChanges, AfterContentInit, AfterContentChecked
+{
   @Input() count: number = 0;
   @Input() person!: Person;
   @Output() updatePerson = new EventEmitter<Person>();
+  @ContentChild(ProjectionComponent) contentChild!: ProjectionComponent;
   field = new FormControl('');
   test = '';
   test1 = '';
@@ -36,6 +43,12 @@ export class DisplayCountComponent implements OnInit, OnChanges {
     for (const propName in changes) {
       console.log(changes[propName]);
     }
+  }
+  ngAfterContentInit(): void {
+    console.log(this.contentChild);
+  }
+  ngAfterContentChecked(): void {
+    this.contentChild.content = 'Content from parent!';
   }
   removeName(index: number) {
     this.names.splice(index, 1);

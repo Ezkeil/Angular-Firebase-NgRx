@@ -14,6 +14,7 @@ import { CounterComponent } from './counter/counter.component';
 import { DisplayCountComponent } from './display-count/display-count.component';
 import { AddSpyDirective } from './add-spy.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProjectionComponent } from './projection/projection.component';
 
 registerLocaleData(en);
 
@@ -23,6 +24,7 @@ registerLocaleData(en);
     CounterComponent,
     DisplayCountComponent,
     AddSpyDirective,
+    ProjectionComponent,
   ],
   imports: [
     BrowserModule,
