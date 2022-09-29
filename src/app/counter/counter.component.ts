@@ -1,3 +1,4 @@
+import { ViewEncapsulation } from '@angular/core'; //Scoping CSS
 import {
   Component,
   EventEmitter,
@@ -12,6 +13,7 @@ import {
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.less'],
+  // encapsulation: ViewEncapsulation.None,
 })
 export class CounterComponent implements OnInit, OnChanges {
   @Input() count: number = 0;
