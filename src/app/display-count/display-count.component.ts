@@ -27,7 +27,18 @@ export class DisplayCountComponent
   implements OnInit, OnChanges, AfterContentInit, AfterContentChecked
 {
   @Input() count: number = 0;
-  @Input() person!: Person;
+  @Input()
+  // Intercepting the input to transform the data as you please
+  get person(): Person {
+    return this._person;
+  }
+  set person(props: Person) {
+    this._person = (props && { ...props, name: props.name.toUpperCase() }) || {
+      name: '',
+      age: 0,
+    };
+  }
+  private _person!: Person;
   @Output() updatePerson = new EventEmitter<Person>();
   @ContentChild(ProjectionComponent) contentChild!: ProjectionComponent;
   field = new FormControl('');
