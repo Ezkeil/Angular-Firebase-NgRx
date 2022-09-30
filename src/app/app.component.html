@@ -22,4 +22,9 @@
 >
   <app-projection></app-projection>
 </app-display-count>
-<app-counter [count]="count" (increment)="onIncrement($event)"></app-counter>
+<app-counter
+  [count]="count"
+  (increment)="onIncrement($event)"
+  #counter
+></app-counter>
+<button (click)="counter.toggleText()">Local button</button>
