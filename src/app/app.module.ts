@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// Addtional modules
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -10,11 +10,15 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CounterComponent } from './counter/counter.component';
-import { DisplayCountComponent } from './display-count/display-count.component';
-import { AddSpyDirective } from '../directives/app-spy/add-spy.directive';
+// Components
+import { CounterComponent } from '../components/counter/counter.component';
+import { DisplayCountComponent } from '../components/display-count/display-count.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ProjectionComponent } from './projection/projection.component';
+import { ProjectionComponent } from '../components/projection/projection.component';
+import { ComplexProjectionComponent } from '../components/complex-projection/complex-projection.component';
+// Directives
+import { AddSpyDirective } from '../directives/app-spy/add-spy.directive';
+import { ComplexProjectionContentDirective } from '../directives/complex-projection/complex-projection-content.directive';
 
 registerLocaleData(en);
 
@@ -23,8 +27,10 @@ registerLocaleData(en);
     AppComponent,
     CounterComponent,
     DisplayCountComponent,
-    AddSpyDirective,
     ProjectionComponent,
+    ComplexProjectionComponent,
+    AddSpyDirective,
+    ComplexProjectionContentDirective,
   ],
   imports: [
     BrowserModule,
