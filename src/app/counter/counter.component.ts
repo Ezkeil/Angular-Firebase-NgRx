@@ -16,8 +16,8 @@ import {
   // encapsulation: ViewEncapsulation.None,
 })
 export class CounterComponent implements OnInit, OnChanges {
-  @Input() count: number = 0;
-  @Output() increment = new EventEmitter<number>();
+  @Input() value!: number;
+  @Output() valueChange = new EventEmitter<number>();
   toggle = false;
   constructor() {}
 
@@ -26,7 +26,8 @@ export class CounterComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {}
 
   increaseCount(payload: number) {
-    this.increment.emit(payload);
+    this.value += payload;
+    this.valueChange.emit(this.value);
   }
   toggleText() {
     this.toggle = !this.toggle;

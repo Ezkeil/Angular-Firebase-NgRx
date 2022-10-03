@@ -28,9 +28,10 @@ export class AppComponent {
   //   if (this.inputValue !== this.viewChild.test1)
   //     this.inputValue = this.viewChild.test1;
   // }
-  // onIncrement(payload: number) {
-  //   this.count += payload;
-  // }
+  value = 10;
+  onIncrement(payload: number) {
+    this.value += payload;
+  }
   // onUpdatePerson(payload: { name: string; age: number }) {
   //   this.person.name = payload.name;
   // }
