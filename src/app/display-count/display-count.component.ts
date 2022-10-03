@@ -39,7 +39,7 @@ export class DisplayCountComponent
     };
   }
   private _person!: Person;
-  @Output() updatePerson = new EventEmitter<Person>();
+  @Output() personChange = new EventEmitter<Person>();
   @ContentChild(ProjectionComponent) contentChild!: ProjectionComponent;
   field = new FormControl('');
   test = '';
@@ -65,10 +65,11 @@ export class DisplayCountComponent
     this.names.splice(index, 1);
   }
   updateName(payload: string) {
-    this.updatePerson.emit({ ...this.person, name: payload });
+    this.personChange.emit({ ...this.person, name: payload });
   }
   onSubmit() {
-    if (this.field.value !== null) this.updateName(this.field.value);
+    console.log(this.test1);
+    if (this.field.value !== null) this.updateName(this.test1);
   }
   onChange(event: any) {
     console.log(event.target.value);

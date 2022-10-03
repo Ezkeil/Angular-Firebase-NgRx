@@ -35,3 +35,6 @@
 <h3>Messages:</h3>
 <p *ngFor="let message of messages">{{ message }}</p> -->
 <app-counter [(value)]="value"></app-counter>
+<app-display-count [count]="count" [(person)]="person">
+  <app-projection></app-projection>
+</app-display-count>

@@ -11,12 +11,7 @@
   <input type="text" [value]="test" (change)="onChange($event)" />
   <br />
   <label>Ng Model:</label>
-  <input
-    type="text"
-    name="field1"
-    [(ngModel)]="test1"
-    (ngModelChange)="onNgModelChange($event)"
-  />
+  <input type="text" name="field1" [(ngModel)]="test1" />
   <br />
   <button type="submit">Submit</button>
 </form>
