@@ -1,4 +1,4 @@
-import { Component, ContentChild, OnInit } from '@angular/core';
+import { Component, ContentChild, OnInit, TemplateRef } from '@angular/core';
 import { ComplexProjectionContentDirective } from 'src/directives/complex-projection/complex-projection-content.directive';
 
 @Component({
@@ -11,6 +11,8 @@ export class ComplexProjectionComponent implements OnInit {
   contentId = 'abc';
   @ContentChild(ComplexProjectionContentDirective)
   content!: ComplexProjectionContentDirective;
+  @ContentChild('header')
+  header!: TemplateRef<any>;
   constructor() {}
 
   ngOnInit(): void {}
