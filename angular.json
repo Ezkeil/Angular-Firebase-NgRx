@@ -7,7 +7,11 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "less",
+          "path": "src/components",
+          "skipImport": true,
+          "module": "./components.module.ts",
+          "skipTests": true
         }
       },
       "root": "",
@@ -78,7 +82,10 @@
               "browserTarget": "angular-firebase-ngrx:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 5000
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
