@@ -9,26 +9,19 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// Components module
-import { ComponentsModule } from 'src/components/components.module';
-// Directives
-import { AddSpyDirective } from '../directives/app-spy/add-spy.directive';
-import { ComplexProjectionContentDirective } from '../directives/complex-projection/complex-projection-content.directive';
+// Directives module
+import { DirectivesModule } from 'src/directives/directives.module';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddSpyDirective,
-    ComplexProjectionContentDirective,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ComponentsModule,
+    DirectivesModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

@@ -7,11 +7,17 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less",
-          "path": "src/components",
-          "skipImport": true,
-          "module": "./components.module.ts",
-          "skipTests": true
+          "style": "less"
+        },
+        "@schematics/angular:pipe": {
+          "path": "src/pipes",
+          "module": "./pipes.module.ts",
+          "export": true
+        },
+        "@schematics/angular:directive": {
+          "path": "src/directives",
+          "module": "./directives.module.ts",
+          "export": true
         }
       },
       "root": "",
