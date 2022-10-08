@@ -8,16 +8,6 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "less"
-        },
-        "@schematics/angular:pipe": {
-          "path": "src/pipes",
-          "module": "./pipes.module.ts",
-          "export": true
-        },
-        "@schematics/angular:directive": {
-          "path": "src/directives",
-          "module": "./directives.module.ts",
-          "export": true
         }
       },
       "root": "",
@@ -42,7 +32,11 @@
                 "output": "/assets/"
               }
             ],
-            "styles": ["src/theme.less", "src/styles.less"],
+            "styles": [
+              "src/theme.less",
+              "src/styles.less",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
