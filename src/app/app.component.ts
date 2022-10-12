@@ -4,15 +4,15 @@ import {
   Component,
   // ViewChild,
 } from '@angular/core';
-// import { FormControl } from '@angular/forms';
-// import { MsgService } from 'src/services/msg/msg-service.service';
+import { FormControl } from '@angular/forms';
+import { MsgService } from 'src/services/msg/msg-service.service';
 // import { DisplayCountComponent } from '../components/display-count/display-count.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
-  // providers: [MsgService],
+  providers: [MsgService],
 })
 export class AppComponent {
   // @ViewChild(DisplayCountComponent) viewChild!: DisplayCountComponent;
@@ -35,15 +35,15 @@ export class AppComponent {
   // onUpdatePerson(payload: { name: string; age: number }) {
   //   this.person.name = payload.name;
   // }
-  // messages: string[] = [];
-  // field = new FormControl('');
-  // constructor(private msgService: MsgService) {
-  //   msgService.message$.subscribe((message) => this.messages.push(message));
-  // }
-  // onSubmit() {
-  //   if (this.field.value !== null) {
-  //     this.msgService.addMessage(this.field.value);
-  //     this.field.reset();
-  //   }
-  // }
+  messages: string[] = [];
+  field = new FormControl('');
+  constructor(private msgService: MsgService) {
+    msgService.message$.subscribe((message) => this.messages.push(message));
+  }
+  onSubmit() {
+    if (this.field.value !== null) {
+      this.msgService.addMessage(this.field.value);
+      this.field.reset();
+    }
+  }
 }
